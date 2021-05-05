@@ -1,5 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/05 16:33:31 by hyeonkki          #+#    #+#             */
+/*   Updated: 2021/05/05 16:37:55 by hyeonkki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int		ft_strlen(char *str)
 {
@@ -26,7 +35,7 @@ int		count(char const *s, char c, int *buf_len)
 		while (s[i] == c)
 			i++;
 		if (s[i] == 0)
-			break;
+			break ;
 		count++;
 		len = 0;
 		while (s[i] != c && s[i])
@@ -40,12 +49,12 @@ int		count(char const *s, char c, int *buf_len)
 	return (count);
 }
 
-char    **make_arr(char const *s, char c)
+char	**make_arr(char const *s, char c)
 {
-	int     i;
-	int     cnt;
+	int		i;
+	int		cnt;
 	int		*buf_len;
-	char    **arr;
+	char	**arr;
 
 	i = -1;
 	buf_len = (int *)malloc(ft_strlen((char *)s) * sizeof(int));
@@ -65,9 +74,9 @@ char    **make_arr(char const *s, char c)
 			return (0);
 		}
 	}
- 	free(buf_len);
- 	return (arr);
- }
+	free(buf_len);
+	return (arr);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -86,36 +95,14 @@ char	**ft_split(char const *s, char c)
 			i++;
 		while (s[i] != c && s[i])
 			arr[j][k++] = s[i++];
-		arr[j][k] = 0;
+		arr[j++][k] = 0;
 		if (k == 0)
 			arr[j] = 0;
 		if (s[i] == 0)
 		{
-			arr[++j] = 0;
-			break;
+			arr[j] = 0;
+			break ;
 		}
-		j++;
 	}
 	return (arr);
 }
-/*
-int	main()
-{
-	int i;
-	char *s = "123*456**789**101112";
-	char c = '*';
-	char **arr;
-
-	i = 0;
-	arr = ft_split(s, c);
-	while (arr[i] != 0)
-	{
-		printf("arr[%d] : %s\n", i, arr[i]);
-		free(arr[i]);
-		i++;
-	}
-	printf("----\n");
-	free(arr[i]);
-	free(arr);
-	return (0);
-}*/

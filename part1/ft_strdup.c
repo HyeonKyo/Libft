@@ -6,11 +6,9 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:37:53 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/03/08 17:44:28 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 15:49:13 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 char	*ft_strdup(char *src)
 {

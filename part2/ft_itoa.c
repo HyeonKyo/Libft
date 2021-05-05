@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/05 16:30:09 by hyeonkki          #+#    #+#             */
+/*   Updated: 2021/05/05 16:31:03 by hyeonkki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int		get_size(int n)
 {
 	int	size;
@@ -12,7 +24,6 @@ int		get_size(int n)
 	}
 	return (size);
 }
-
 
 char	*ft_itoa(int n)
 {
@@ -38,16 +49,3 @@ char	*ft_itoa(int n)
 	}
 	return (buf);
 }
-/*
-int	main()
-{
-	int n1 = -21412392;
-	int n2 = 21412392;
-	char *buf;
-
-	buf = ft_itoa(n1);
-	printf("%s\n", buf);
-	buf = ft_itoa(n2);
-	printf("%s\n", buf);
-	return (0);
-}*/

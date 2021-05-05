@@ -2,19 +2,24 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS: .c=.o)
-INC = -I./
-TARGET = libft
+AR = ar -rc
+NAME = libft.a
+RM = rm -f
 
-all : $(TARGET)
+all	:		$(NAME)
 
-$(TARGET) : $(OBJS)
-	$(CC) $(CFLAGS) $? $(INC) -o $@
+$(NAME)	:	$(OBJS)
+			$(AR) $(NAME) $(OBJS)
 
+%.o		:	%.c %.h	
+			$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY : clean
-	clean :
-		rm -f $(OBJS)
+clean	:
+			$(RM) $(OBJS)
 
-fclean : clean
+fclean	:	clean
+			$(RM) $(NAME)
 
-re : fclean all
+re		:	fclean all
+
+.PHONY	:	all clean fclean re

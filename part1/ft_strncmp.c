@@ -6,14 +6,14 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 00:40:06 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/03/10 00:29:09 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 15:49:46 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	unsigned int	i;
-	int				cmp;
+	size_t	i;
+	int		cmp;
 
 	if (n == 0)
 		return (0);

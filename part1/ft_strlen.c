@@ -6,18 +6,16 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:32:21 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/02/25 15:22:12 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 15:47:37 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
+	while (str[i])
 		i++;
-	}
 	return (i);
 }
