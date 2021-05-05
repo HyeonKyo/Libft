@@ -6,21 +6,11 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:31 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:31:15 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 20:06:03 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 int		count(char const *s, char c, int *buf_len)
 {

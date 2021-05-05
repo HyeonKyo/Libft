@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:19:56 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:39:11 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 20:22:31 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	*ft_memmove(void *dest, const void *src, size_t num)
 	i = -1;
 	while (++i < (int)num)
 		d[i] = buf[i];
+	d[i] = 0;
 	return (dest);
 }

@@ -6,21 +6,11 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:16 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:52:25 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 20:06:47 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 int		find_char(char c, char const *set)
 {

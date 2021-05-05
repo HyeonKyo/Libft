@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:18:18 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:43:53 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 20:21:12 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 const void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char	*dst;
-	char	*s;
-	int		i;
+	char		*dst;
+	const char	*s;
+	int			i;
 
 	i = 0;
 	dst = dest;
-	s = (char *)src;
+	s = src;
 	while (n--)
 	{
 		if (s[i] == c)

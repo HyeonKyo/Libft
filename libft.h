@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:42:17 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:44:07 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/05 21:32:56 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ size_t		ft_strlcat(char *dest, char *src, size_t size);
 char		*ft_strchr(char *str, int c);
 char		*ft_strrchr(char *str, int c);
 const char	*ft_strnstr(const char *big, const char *little, size_t len);
+int			ft_atoi(const char *str);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
