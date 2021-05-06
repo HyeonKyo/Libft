@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 23:47:18 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:35:33 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 21:59:41 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	len;
+	size_t	i;
+	size_t	len;
 
 	len = 0;
 	i = 0;
@@ -26,6 +26,7 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	if (i + 1 == size)
+		dest[i] = 0;
 	return (len);
 }

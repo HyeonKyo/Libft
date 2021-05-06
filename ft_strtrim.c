@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:16 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:06:47 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 22:27:56 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
-	int		k;
-	int		*del_index;
+	int		len;
 	char	*str;
 
 	i = -1;
 	j = 0;
-	k = 0;
-	del_index = (int *)malloc(ft_strlen((char *)s1) * sizeof(int));
+	len = ft_strlen((char *)s1) + 1;
+	str = (char *)malloc(len * sizeof(char));
+	if (str == 0)
+		return (0);
 	while (s1[++i])
-		if (!find_char(s1[i], set))
-			del_index[j++] = i;
-	str = (char *)malloc((ft_strlen((char *)s1) - j + 1) * sizeof(char));
-	i = -1;
-	j = 0;
-	while (s1[++i])
-		if (i != del_index[j])
-			str[k++] = s1[i];
-		else
-			j++;
-	str[k] = 0;
-	free(del_index);
+		if (find_char(s1[i], set))
+			str[j++] = s1[i];
+	str[j] = 0;
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:42:17 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 21:32:56 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 21:38:23 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void		*ft_memset(void *ptr, int value, size_t num);
 void		ft_bzero(void *ptr, size_t size);
 void		*ft_memcpy(void *dest, const void *source, size_t num);
-const void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void		*ft_memmove (void *dest, const void *src, size_t num);
 void		*ft_memchr(void *ptr, int value, size_t num);
 int			ft_memcmp(const void *ptr1, const void *ptr2, size_t num);

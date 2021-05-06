@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:20:07 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:29:33 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 21:40:43 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(char *str, int c)
 	while (str[++i])
 		if (str[i] == c)
 			return (str + i);
-	if (str[0] == 0 && c == 0)
-		return (str);
+	if (str[i] == 0 && c == 0)
+		return (str + i);
 	return (0);
 }

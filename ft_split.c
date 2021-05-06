@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:31 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:06:03 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 23:01:01 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,25 @@ int		count(char const *s, char c, int *buf_len)
 	return (count);
 }
 
-char	**make_arr(char const *s, char c)
+int		*make_arr1(char const *s)
+{
+	int		*buf_len;
+
+	buf_len = (int *)malloc(ft_strlen((char *)s) * sizeof(int));
+	if (buf_len == 0)
+		return (0);
+	return (buf_len);
+}
+
+void	clear(char **arr, int idx)
+{
+	if (idx != 0)
+		while (--idx >= 0)
+			free(arr[idx]);
+	free(arr);
+}
+
+char	**make_arr2(char const *s, char c)
 {
 	int		i;
 	int		cnt;
@@ -49,7 +67,7 @@ char	**make_arr(char const *s, char c)
 	char	**arr;
 
 	i = -1;
-	buf_len = (int *)malloc(ft_strlen((char *)s) * sizeof(int));
+	buf_len = make_arr1(s);
 	cnt = count(s, c, buf_len);
 	arr = (char **)malloc((cnt + 1) * sizeof(char *));
 	if (arr == 0)
@@ -59,9 +77,7 @@ char	**make_arr(char const *s, char c)
 		arr[i] = (char *)malloc((buf_len[i] + 1) * sizeof(char));
 		if (arr[i] == 0)
 		{
-			while (--i >= 0)
-				free(arr[i]);
-			free(arr);
+			clear(arr, i);
 			free(buf_len);
 			return (0);
 		}
@@ -79,7 +95,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	arr = make_arr(s, c);
+	arr = make_arr2(s, c);
 	while (s[i])
 	{
 		k = 0;
@@ -88,13 +104,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] != c && s[i])
 			arr[j][k++] = s[i++];
 		arr[j++][k] = 0;
-		if (k == 0)
-			arr[j] = 0;
-		if (s[i] == 0)
-		{
-			arr[j] = 0;
-			break ;
-		}
 	}
+	arr[j] = 0;
 	return (arr);
 }

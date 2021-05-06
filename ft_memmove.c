@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 16:19:56 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:22:31 by hyeonkki         ###   ########.fr       */
+/*   Created: 2021/05/06 19:45:41 by hyeonkki          #+#    #+#             */
+/*   Updated: 2021/05/06 20:05:03 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,28 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t num)
 {
-	char		buf[num];
-	char		*d;
-	const char	*s;
-	int			i;
+	char	*dst;
+	char	*s;
+	size_t	i;
 
-	i = -1;
-	d = dest;
-	s = src;
-	while (++i < (int)num)
-		buf[i] = s[i];
-	i = -1;
-	while (++i < (int)num)
-		d[i] = buf[i];
-	d[i] = 0;
+	if ((dest == 0 && src == 0) || num == 0)
+		return (dest);
+	dst = dest;
+	s = (char *)src;
+	i = 0;
+	if (dest <= src)
+	{
+		while (i < num)
+		{
+			dst[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (num--)
+			dst[num] = s[num];
+		dst[num] = s[num];
+	}
 	return (dest);
 }

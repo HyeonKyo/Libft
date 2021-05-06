@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:18:08 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:19:04 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 17:59:23 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 void	*ft_memcpy(void *dest, const void *source, size_t num)
 {
-	char		*dst;
-	const char	*src;
-	int			i;
+	unsigned char		*dst;
+	unsigned const char	*src;
+	unsigned int		i;
 
-	i = -1;
+	i = 0;
+	if (dest == 0 && source == 0)
+		return (0);
 	dst = dest;
 	src = source;
-	while (++i < (int)num && src[i])
+	while (i < (unsigned int)num)
+	{
 		dst[i] = src[i];
-	dst[i] = 0;
+		i++;
+	}
 	return (dest);
 }

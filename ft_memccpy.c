@@ -6,27 +6,29 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:18:18 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 20:21:12 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/06 18:37:41 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-const void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char		*dst;
-	const char	*s;
-	int			i;
+	unsigned char		*dst;
+	unsigned char		*s;
+	unsigned char		find_c;
+	size_t				i;
 
 	i = 0;
 	dst = dest;
-	s = src;
-	while (n--)
+	s = (unsigned char *)src;
+	find_c = c;
+	while (i < n)
 	{
-		if (s[i] == c)
-			return (src + i + 1);
 		dst[i] = s[i];
+		if (s[i] == find_c)
+			return (dest + i + 1);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
