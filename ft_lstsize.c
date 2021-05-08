@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 16:20:31 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:37:31 by hyeonkki         ###   ########.fr       */
+/*   Created: 2021/05/07 16:05:49 by hyeonkki          #+#    #+#             */
+/*   Updated: 2021/05/07 17:20:34 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, int c)
+int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		len;
+	t_list	*temp;
 
-	i = 0;
-	while (str[i])
-		i++;
-	if (c == 0)
-		i++;
-	while (--i >= 0)
-		if (str[i] == c)
-			return (str + i);
-	return (0);
+	len = 0;
+	temp = lst;
+	while (temp)
+	{
+		temp = temp->next;
+		len++;
+	}
+	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:24:03 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:38:14 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/08 14:45:40 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_bzero(void *ptr, size_t size)
 {
 	char	*s;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	s = ptr;
-	while (i < (int)size)
+	while (i < size)
 	{
 		s[i] = 0;
 		i++;

@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 19:45:41 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/08 15:59:00 by hyeonkki         ###   ########.fr       */
+/*   Created: 2021/05/07 16:23:22 by hyeonkki          #+#    #+#             */
+/*   Updated: 2021/05/08 14:33:20 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t num)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*dst;
-	char	*s;
-	size_t	i;
+	t_list	*cur;
+	t_list	*new;
+	t_list	*head;
 
-	if ((dest == 0 && src == 0) || num == 0)
-		return (dest);
-	dst = dest;
-	s = (char *)src;
-	i = 0;
-	if (dest <= src)
+	if (lst == 0)
+		return (0);
+	head = ft_lstnew((*f)(lst->content));
+	if (head == 0)
+		return (0);
+	new = head;
+	cur = lst->next;
+	while (cur)
 	{
-		while (i < num)
+		new->next = ft_lstnew((*f)(cur->content));
+		if (new->next == 0)
 		{
-			dst[i] = s[i];
-			i++;
+			ft_lstclear(&head, del);
+			return (0);
 		}
+		new = new->next;
+		cur = cur->next;
 	}
-	else
-		while (num--)
-			dst[num] = s[num];
-	return (dest);
+	return (head);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:31:39 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/05 19:51:41 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/08 16:51:17 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = -1;
+	if (s == 0)
+		return ;
 	while (s[++i])
 		write(fd, s + i, 1);
 }

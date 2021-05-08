@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/05 16:20:31 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:37:31 by hyeonkki         ###   ########.fr       */
+/*   Created: 2021/05/07 16:11:57 by hyeonkki          #+#    #+#             */
+/*   Updated: 2021/05/08 13:58:24 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*cur;
 
-	i = 0;
-	while (str[i])
-		i++;
-	if (c == 0)
-		i++;
-	while (--i >= 0)
-		if (str[i] == c)
-			return (str + i);
-	return (0);
+	if (*lst == 0 && new == 0)
+		return ;
+	if (*lst == 0)
+	{
+		*lst = new;
+		return ;
+	}
+	cur = *lst;
+	while (cur->next)
+		cur = cur->next;
+	cur->next = new;
 }

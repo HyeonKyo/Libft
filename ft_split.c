@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:31 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/06 23:01:01 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/08 16:47:40 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		count(char const *s, char c, int *buf_len)
 
 int		*make_arr1(char const *s)
 {
-	int		*buf_len;
+	int	*buf_len;
 
 	buf_len = (int *)malloc(ft_strlen((char *)s) * sizeof(int));
 	if (buf_len == 0)
@@ -72,7 +72,7 @@ char	**make_arr2(char const *s, char c)
 	arr = (char **)malloc((cnt + 1) * sizeof(char *));
 	if (arr == 0)
 		return (0);
-	while (++i <= cnt)
+	while (++i < cnt)
 	{
 		arr[i] = (char *)malloc((buf_len[i] + 1) * sizeof(char));
 		if (arr[i] == 0)
@@ -82,6 +82,7 @@ char	**make_arr2(char const *s, char c)
 			return (0);
 		}
 	}
+	arr[cnt] = 0;
 	free(buf_len);
 	return (arr);
 }
@@ -96,6 +97,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	arr = make_arr2(s, c);
+	if (arr == 0)
+		return (0);
 	while (s[i])
 	{
 		k = 0;
@@ -103,8 +106,8 @@ char	**ft_split(char const *s, char c)
 			i++;
 		while (s[i] != c && s[i])
 			arr[j][k++] = s[i++];
-		arr[j++][k] = 0;
+		if (s[i])
+			arr[j++][k] = 0;
 	}
-	arr[j] = 0;
 	return (arr);
 }
