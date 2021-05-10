@@ -6,13 +6,13 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:16 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/08 17:03:10 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/10 17:43:39 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		find_char(char c, char const *set)
+static	int	find_char(char c, char const *set)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int		find_char(char c, char const *set)
 	return (1);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;

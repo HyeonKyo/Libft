@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 02:02:27 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:37:08 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/10 17:11:26 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	n_dest;
-	unsigned int	n_src;
-	unsigned int	i;
-	unsigned int	j;
+	size_t	ln_dest;
+	size_t	ln_src;
+	size_t	i;
+	size_t	j;
 
-	n_dest = 0;
-	n_src = 0;
-	while (dest[n_dest])
-		n_dest++;
-	while (src[n_src])
-		n_src++;
-	if (n_dest > size)
-		return (n_src + size);
-	i = n_dest;
+	ln_dest = 0;
+	ln_src = 0;
+	ln_dest = ft_strlen(dest);
+	ln_src = ft_strlen(src);
+	if (ln_dest > size)
+		return (ln_src + size);
+	i = ln_dest;
 	j = 0;
-	while (i + 1 < size && src[j])
+	while (src[j] && i + 1 < size)
 		dest[i++] = src[j++];
-	dest[i] = '\0';
-	return (n_dest + n_src);
+	dest[i] = 0;
+	return (ln_dest + ln_src);
 }

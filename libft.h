@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:42:17 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 16:58:54 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/10 19:24:46 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
 
 typedef struct		s_list
 {

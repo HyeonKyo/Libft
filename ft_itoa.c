@@ -6,13 +6,13 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:30:09 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/08 14:48:14 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/10 17:41:38 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_size(int n)
+static	int		get_size(int n)
 {
 	int	size;
 
@@ -27,7 +27,7 @@ int		get_size(int n)
 	return (size);
 }
 
-char	*min_num(void)
+static	char	*min_num(void)
 {
 	char	*buf;
 	int		i;
@@ -49,7 +49,7 @@ char	*min_num(void)
 	return (buf);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		size;
 	char	*buf;

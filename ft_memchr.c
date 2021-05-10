@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:17:28 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:35:43 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/10 19:18:59 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	*ft_memchr(void *ptr, int value, size_t num)
 {
 	char	*s;
-	int		i;
+	size_t	i;
 
 	s = ptr;
 	i = 0;
-	while (i < (int)num)
+	while (i < num)
 	{
-		if (s[i] == value)
+		if ((unsigned char)s[i] == (unsigned char)value)
 			return (ptr + i);
 		i++;
 	}
