@@ -6,7 +6,7 @@
 #    By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/11 16:21:12 by hyeonkki          #+#    #+#              #
-#    Updated: 2021/05/11 16:21:14 by hyeonkki         ###   ########.fr        #
+#    Updated: 2021/05/13 15:25:59 by hyeonkki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ fclean	:	clean
 
 re		:	fclean all
 
-bonus	:	$(OBJS_B) $(OBJS)
+bonus	:	$(OBJS_B)
 			$(AR) $(NAME) $^
 
 .PHONY	:	all clean fclean re bonus

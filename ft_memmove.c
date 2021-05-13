@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 19:45:41 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/08 15:59:00 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/13 16:04:42 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t num)
 {
-	char	*dst;
-	char	*s;
-	size_t	i;
+	unsigned char	*dst;
+	unsigned char	*s;
+	size_t			i;
 
 	if ((dest == 0 && src == 0) || num == 0)
 		return (dest);
 	dst = dest;
-	s = (char *)src;
+	s = (unsigned char *)src;
 	i = 0;
 	if (dest <= src)
 	{

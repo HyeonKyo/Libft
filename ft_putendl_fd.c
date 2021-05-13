@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:31:20 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/08 16:51:35 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/13 18:10:47 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = -1;
 	if (s == 0)
 		return ;
-	while (s[++i])
-		write(fd, s + i, 1);
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

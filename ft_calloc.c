@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:15:38 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:32:51 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/13 15:26:41 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t n, size_t size)
 {
 	char	*ptr;
-	int		i;
+	size_t	i;
 	size_t	num;
 
 	i = 0;
@@ -25,7 +25,7 @@ void	*ft_calloc(size_t n, size_t size)
 	ptr = malloc(n * size);
 	if (ptr == 0)
 		return (0);
-	while (i < (int)num)
+	while (i < num)
 		ptr[i++] = 0;
 	return (ptr);
 }
