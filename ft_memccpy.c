@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:18:18 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 12:27:18 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/18 13:28:21 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 			return (dest + i + 1);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:42:52 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/11 13:33:50 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/14 16:34:01 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (start > (unsigned int)ft_strlen((char *)s))
+	if (s == 0 || (*s == 0 && start > 0))
+		return (0);
+	if (start > (unsigned int)ft_strlen(s) || (*s == 0 && start == 0))
 		len = 0;
-	else if ((size_t)ft_strlen((char *)(s + start)) < len)
-		len = (size_t)ft_strlen((char *)(s + start));
+	else if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (str == 0)
 		return (0);

@@ -6,11 +6,9 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:16:51 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:35:33 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/14 19:32:24 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

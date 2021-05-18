@@ -6,7 +6,7 @@
 #    By: hyeonkki <hyeonkki@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/11 16:21:12 by hyeonkki          #+#    #+#              #
-#    Updated: 2021/05/13 15:25:59 by hyeonkki         ###   ########.fr        #
+#    Updated: 2021/05/18 13:34:23 by hyeonkki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,16 @@ AR = ar -rc
 NAME = libft.a
 RM = rm -f
 
+ifdef IS_BONUS
+	OBJ_FILES = $(OBJS) $(OBJS_B)
+else
+	OBJ_FILES = $(OBJS)
+endif
+
 all		:	$(NAME)
 
-$(NAME)	:	$(OBJS)
-			$(AR) $@ $(OBJS)
+$(NAME)	:	$(OBJ_FILES)
+			$(AR) $@ $^
 
 clean	:
 			$(RM) $(OBJS) $(OBJS_B)
@@ -38,7 +44,7 @@ fclean	:	clean
 
 re		:	fclean all
 
-bonus	:	$(OBJS_B)
-			$(AR) $(NAME) $^
+bonus	:
+			make IS_BONUS=1 all
 
 .PHONY	:	all clean fclean re bonus

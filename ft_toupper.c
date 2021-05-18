@@ -6,11 +6,9 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:20:43 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:37:43 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/15 14:26:02 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

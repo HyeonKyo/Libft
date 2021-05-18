@@ -6,19 +6,17 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:30:09 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/10 17:41:38 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/15 14:08:45 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		get_size(int n)
+static int		get_size(int n)
 {
 	int	size;
 
 	size = 0;
-	if (n < 0)
-		n = -n;
 	while (n)
 	{
 		size++;
@@ -27,26 +25,11 @@ static	int		get_size(int n)
 	return (size);
 }
 
-static	char	*min_num(void)
+static size_t	absol_val(int n)
 {
-	char	*buf;
-	int		i;
-	int		n;
-
-	i = 1;
-	n = 214748364;
-	buf = (char *)malloc(12 * sizeof(char));
-	if (buf == 0)
-		return (0);
-	buf[0] = '-';
-	buf[11] = 0;
-	buf[10] = '8';
-	while (i < 10)
-	{
-		buf[10 - i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	return (buf);
+	if (n < 0)
+		return (-n);
+	return (n);
 }
 
 char			*ft_itoa(int n)
@@ -54,8 +37,6 @@ char			*ft_itoa(int n)
 	int		size;
 	char	*buf;
 
-	if (n == -2147483648)
-		return (min_num());
 	size = get_size(n) + 1;
 	if (n <= 0)
 		size = size + 1;
@@ -63,16 +44,13 @@ char			*ft_itoa(int n)
 	if (buf == 0)
 		return (0);
 	if (n < 0)
-	{
 		buf[0] = '-';
-		n = -n;
-	}
 	buf[--size] = 0;
 	if (n == 0)
 		buf[0] = '0';
 	while (n)
 	{
-		buf[--size] = n % 10 + '0';
+		buf[--size] = absol_val(n % 10) + '0';
 		n = n / 10;
 	}
 	return (buf);

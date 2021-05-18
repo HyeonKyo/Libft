@@ -6,7 +6,7 @@
 /*   By: hyeonkki <hyeonkki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:33:31 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/11 14:30:45 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/14 16:32:26 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static	int		*make_arr1(char const *s)
 {
 	int	*buf_len;
 
-	buf_len = (int *)malloc((ft_strlen((char *)s) + 1) * sizeof(int));
+	buf_len = (int *)malloc((ft_strlen(s) + 1) * sizeof(int));
 	if (buf_len == 0)
 		return (0);
 	return (buf_len);
@@ -105,6 +105,8 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (s == 0)
+		return (0);
 	arr = make_arr3(s, c);
 	if (arr == 0)
 		return (0);

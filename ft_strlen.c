@@ -6,13 +6,13 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:32:21 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:37:21 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/18 13:29:03 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

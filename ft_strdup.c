@@ -6,13 +6,13 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:37:53 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/07 17:36:59 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/14 16:26:21 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*temp;
 	int		i;

@@ -6,13 +6,13 @@
 /*   By: hyeonkki <hyeonkki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 02:02:27 by hyeonkki          #+#    #+#             */
-/*   Updated: 2021/05/10 17:11:26 by hyeonkki         ###   ########.fr       */
+/*   Updated: 2021/05/14 16:21:13 by hyeonkki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	ln_dest;
 	size_t	ln_src;
